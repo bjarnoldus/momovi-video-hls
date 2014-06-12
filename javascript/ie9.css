@@ -1,0 +1,44 @@
+.vjs-default-skin .vjs-fullscreen-control:before {
+	content: "\e000";
+	margin-left: 5px;
+	font-size: 14px;
+	line-height: 3;
+	top: -3px;
+}
+
+.vjs-default-skin .vjs-seek-handle:before {
+ 	top: -7px;
+  	left: -0.2em;
+}
+
+.vjs-default-skin .vjs-volume-handle:before {
+	top: -5px;
+	left: -0.5em;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: #000;
+  padding: 20px;
+  z-index: 950;
+}
+
+
+.down-select {
+  	color: #fff;
+  }
+
+ .down-select:focus {
+  	color: #fff;
+ }
+
+ .down-select option {
+	color: #fff;
+  background: #000;
+}

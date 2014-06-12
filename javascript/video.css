@@ -1,0 +1,1323 @@
+
+
+
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans',Helvetica Neue,Arial,sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+input,textarea { outline: none; }
+
+.vjs-default-skin {
+  color: #d7d7d7;
+}
+
+/* Custom Icon Font
+--------------------------------------------------------------------------------
+The control icons are from a custom font. Each icon corresponds to a character
+(e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
+*/
+
+
+@font-face {
+  font-family: 'VideoJS';
+  src: url('font/vjs.eot');
+  src: url('font/vjs.eot?#iefix') format('embedded-opentype'), url('font/vjs.woff') format('woff'), url('font/vjs.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'selfie';
+  src: url('font/self.eot?35956672');
+  src: url('font/self.eot?35956672#iefix') format('embedded-opentype'),
+       url('font/self.svg?35956672#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'selfie';
+  src: url('data:application/octet-stream;base64,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') format('woff'),
+       url('data:application/octet-stream;base64,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') format('truetype');
+}
+
+
+/* Base UI Component Classes
+--------------------------------------------------------------------------------
+*/
+/* Slider - used for Volume bar and Seek bar */
+.vjs-default-skin .vjs-slider {
+  /* Replace browser focus hightlight with handle highlight */
+  outline: 0;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  /* background-color-with-alpha */
+  background-color: #646464;
+  background-color: rgba(225, 225, 225, 0.50);
+  border-radius: 10px;
+}
+.vjs-default-skin .vjs-slider:focus {
+  /* box-shadow */
+  -webkit-box-shadow: 0 0 2em #ffffff;
+  -moz-box-shadow: 0 0 2em #ffffff;
+  box-shadow: 0 0 2em #ffffff;
+}
+.vjs-default-skin .vjs-slider-handle {
+  position: absolute;
+  /* Needed for IE6 */
+  left: 0;
+  top: 0;
+}
+.vjs-default-skin .vjs-slider-handle:before {
+  content: "\e800";
+  font-family: selfie;
+  font-size: 1em;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0px 2px 4px rgba(0,0,0,.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Control Bar
+--------------------------------------------------------------------------------
+The default control bar that is a container for most of the controls.
+*/
+.vjs-default-skin .vjs-control-bar {
+  margin: 20px 15px;
+  /* Start hidden */
+  display: none;
+  position: absolute;
+  /* Place control bar at the bottom of the player box/video.
+     If you want more margin below the control bar, add more height. */
+  bottom: 0;
+  /* Use left/right to stretch to 100% width of player div */
+  left: 0;
+  right: 0;
+  /* Height includes any margin you want above or below control items */
+  height: 3.0em;
+  /* background-color-with-alpha */
+}
+/* Show the control bar only once the video has started playing */
+.vjs-default-skin.vjs-has-started .vjs-control-bar {
+  display: block;
+  /* Visibility needed to make sure things hide in older browsers too. */
+
+  visibility: visible;
+  opacity: 1;
+  /* transition */
+  -webkit-transition: visibility 0.1s, opacity 0.1s;
+  -moz-transition: visibility 0.1s, opacity 0.1s;
+  -o-transition: visibility 0.1s, opacity 0.1s;
+  transition: visibility 0.1s, opacity 0.1s;
+}
+/* Hide the control bar when the video is playing and the user is inactive  */
+.vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  /* transition */
+  -webkit-transition: visibility 1s, opacity 1s;
+  -moz-transition: visibility 1s, opacity 1s;
+  -o-transition: visibility 1s, opacity 1s;
+  transition: visibility 1s, opacity 1s;
+}
+.vjs-default-skin.vjs-controls-disabled .vjs-control-bar {
+  display: none;
+}
+.vjs-default-skin.vjs-using-native-controls .vjs-control-bar {
+  display: none;
+}
+/* IE8 is flakey with fonts, and you have to change the actual content to force
+fonts to show/hide properly.
+  - "\9" IE8 hack didn't work for this
+  - Found in XP IE8 from http://modern.ie. Does not show up in "IE8 mode" in IE9
+*/
+@media \0screen {
+  .vjs-default-skin.vjs-user-inactive.vjs-playing .vjs-control-bar :before {
+    content: "";
+  }
+}
+/* General styles for individual controls. */
+.vjs-default-skin .vjs-control {
+  outline: none;
+  position: relative;
+  float: left;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 3.0em;
+  width: 4em;
+}
+/* FontAwsome button icons */
+.vjs-default-skin .vjs-control:before {
+  font-family: VideoJS;
+  font-size: 1.5em;
+  line-height: 2.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-shadow: none;
+}
+/* Replacement for focus outline */
+.vjs-default-skin .vjs-control:focus:before,
+.vjs-default-skin .vjs-control:hover:before {
+  text-shadow: none;
+}
+.vjs-default-skin .vjs-control:focus {
+  /*  outline: 0; */
+  /* keyboard-only users cannot see the focus on several of the UI elements when
+  this is set to 0 */
+
+}
+/* Hide control text visually, but have it available for screenreaders */
+.vjs-default-skin .vjs-control-text {
+  /* hide-visually */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* Play/Pause
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-play-control {
+  margin-right: 10px;
+  width: 6em;
+  cursor: pointer;
+  z-index: 101;
+
+}
+.vjs-default-skin .vjs-play-control:before {
+  content: "PLAY";
+  font-size: 10px;
+  font-family: 'Open Sans',Helvetica Neue,Arial,sans-serif;
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  line-height: 3;
+  box-shadow: 0em 0.0em 0.2em rgba(0,0,0,.2);
+}
+.vjs-default-skin.vjs-playing .vjs-play-control:before {
+  content: "PAUSE";
+  box-shadow: 0em 0.0em 0.2em rgba(0,0,0,.2);
+}
+/* Volume/Mute
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-mute-control,
+.vjs-default-skin .vjs-volume-menu-button {
+  cursor: pointer;
+  float: right;
+}
+.vjs-default-skin .vjs-mute-control:before,
+.vjs-default-skin .vjs-volume-menu-button:before {
+  content: "\e006";
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-0:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-0:before {
+  content: "\e003";
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-1:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-1:before {
+  content: "\e004";
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-2:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-2:before {
+  content: "\e005";
+}
+.vjs-default-skin .vjs-volume-control {
+  width: 5em;
+  float: right;
+  margin-right: 15px;
+  z-index: 50;
+}
+.vjs-default-skin .vjs-volume-bar {
+  width: 5em;
+  height: 0.5em;
+  margin: 1.50em auto 0;
+  border-radius: 10px;
+}
+.vjs-default-skin .vjs-volume-menu-button .vjs-menu-content {
+  height: 2.9em;
+}
+.vjs-default-skin .vjs-volume-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.5em;
+  background: #a9b1c0;
+  border-radius: 10px;
+}
+.vjs-default-skin .vjs-volume-bar .vjs-volume-handle {
+  width: 0.5em;
+  height: 0.5em;
+}
+.vjs-default-skin .vjs-volume-handle:before {
+font-size: 2.2em;
+top: -9px;
+left: -0.2em;
+width: 1em;
+height: 1em;
+}
+.vjs-default-skin .vjs-volume-menu-button .vjs-menu .vjs-menu-content {
+  width: 6em;
+  left: -4em;
+}
+/* Progress
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-progress-control {
+  padding: 0px 160px 0px 160px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;
+  font-size: 0.5em;
+  height: 1em;
+  z-index: 10;
+  /* Set above the rest of the controls. */
+  top: 15px;
+  /* Shrink the bar slower than it grows. */
+  /* transition */
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+/* On hover, make the progress bar grow to something that's more clickable.
+    This simply changes the overall font for the progress bar, and this
+    updates both the em-based widths and heights, as wells as the icon font */
+.vjs-default-skin:hover .vjs-progress-control {
+  font-size: 0.5em;
+  /* Even though we're not changing the top/height, we need to include them in
+      the transition so they're handled correctly. */
+
+  /* transition */
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+/* Box containing play and load progresses. Also acts as seek scrubber. */
+.vjs-default-skin .vjs-progress-holder {
+  height: 100%;
+}
+/* Progress Bars */
+.vjs-default-skin .vjs-progress-holder .vjs-play-progress,
+.vjs-default-skin .vjs-progress-holder .vjs-load-progress {
+  position: absolute;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Needed for IE6 */
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.vjs-default-skin .vjs-play-progress {
+  /*
+    Using a data URI to create the white diagonal lines with a transparent
+      background. Surprisingly works in IE8.
+      Created using http://www.patternify.com
+    Changing the first color value will change the bar color.
+    Also using a paralax effect to make the lines move backwards.
+      The -50% left position makes that happen.
+  */
+  background: #a9b1c0; }
+
+
+.vjs-default-skin .vjs-load-progress {
+  background: #646464 /* IE8- Fallback */;
+  background: rgba(255, 255, 255, 0.10);
+}
+.vjs-default-skin .vjs-seek-handle {
+  width: 1.5em;
+  height: 100%;
+}
+.vjs-default-skin .vjs-seek-handle:before {
+  padding-top: 0.1em;
+  font-size: 4.4em;
+  top: -11px;
+  left: -0.2em;
+}
+/* Time Display
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-time-controls {
+  font-size: 1em;
+  line-height: 3em;
+  margin-top: 2px;
+}
+.vjs-default-skin .vjs-current-time {
+  float: left;
+}
+.vjs-default-skin .vjs-duration {
+  float: left;
+}
+/* Remaining time is in the HTML, but not included in default design */
+.vjs-default-skin .vjs-remaining-time {
+  display: none;
+  float: left;
+}
+.vjs-time-divider {
+  float: left;
+  line-height: 3em;
+  margin-top: 2px;
+}
+/* Fullscreen
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-fullscreen-control {
+  width: 3.8em;
+  cursor: pointer;
+  float: right;
+}
+.vjs-default-skin .vjs-fullscreen-control:before {
+  content: "\e000";
+  margin-left: 5px;
+  font-size: 1.2em;
+  line-height: 3;
+}
+/* Switch to the exit icon when the player is in fullscreen */
+.vjs-default-skin.vjs-fullscreen .vjs-fullscreen-control:before {
+  content: "\e00b";
+}
+/* Big Play Button (play button at start)
+--------------------------------------------------------------------------------
+Positioning of the play button in the center or other corners can be done more
+easily in the skin designer. http://designer.videojs.com/
+*/
+.vjs-default-skin .vjs-big-play-button {
+  top: 41%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+  font-size: 2.4em;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  width: 4em;
+  height: 2.6em;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  opacity: 1;
+  /* Need a slightly gray bg so it can be seen on black backgrounds */
+  /* background-color-with-alpha */
+  background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0.1em solid #FFF;
+  /* border-radius */
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+
+  /* transition */
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  /* txt shadow */
+  text-shadow: 0em 0.0em 0.1em #000;
+  color: #FFF;
+}
+/* Optionally center */
+.vjs-default-skin.vjs-big-play-centered .vjs-big-play-button {
+  /* Center it horizontally */
+  left: 50%;
+  margin-left: -2.1em;
+  /* Center it vertically */
+  top: 50%;
+  margin-top: -1.4000000000000001em;
+}
+/* Hide if controls are disabled */
+.vjs-default-skin.vjs-controls-disabled .vjs-big-play-button {
+  display: none;
+}
+/* Hide when video starts playing */
+.vjs-default-skin.vjs-has-started .vjs-big-play-button {
+  display: none;
+}
+/* Hide on mobile devices. Remove when we stop using native controls
+    by default on mobile  */
+.vjs-default-skin.vjs-using-native-controls .vjs-big-play-button {
+  display: none;
+}
+.vjs-default-skin:hover .vjs-big-play-button,
+.vjs-default-skin .vjs-big-play-button:focus {
+  outline: 0;
+  border-color: #57DFC7;
+  /* IE8 needs a non-glow hover state */
+  background-color: #57DFC7;
+    background-color: rgba(87, 223, 199, 0.90);
+  /* transition */
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  color: #fff;
+  text-shadow: none;
+}
+.vjs-default-skin .vjs-big-play-button:before {
+  content: "PLAY";
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Open Sans',Helvetica Neue,Arial,sans-serif;
+  /* In order to center the play icon vertically we need to set the line height
+     to the same as the button height */
+
+  line-height: 2.6em;
+  text-align: center /* Needed for IE8 */;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Loading Spinner
+--------------------------------------------------------------------------------
+*/
+.vjs-loading-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5em;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  margin-left: -0.5em;
+  margin-top: -0.5em;
+  opacity: 0.75;
+  /* animation */
+  -webkit-animation: spin 1.5s infinite linear;
+  -moz-animation: spin 1.5s infinite linear;
+  -o-animation: spin 1.5s infinite linear;
+  animation: spin 1.5s infinite linear;
+}
+.vjs-default-skin .vjs-loading-spinner:before {
+  content: "\e01e";
+  font-family: VideoJS;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  text-shadow: 0em 0em 0.1em #000;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* Menu Buttons (Captions/Subtitles/etc.)
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-menu-button {
+  float: right;
+  cursor: pointer;
+}
+.vjs-default-skin .vjs-menu {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0em;
+  /* (Width of vjs-menu - width of button) / 2 */
+
+  width: 0em;
+  height: 0em;
+  margin-bottom: 3em;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-top: 1.55em solid #000000;
+  /* Same width top as ul bottom */
+
+  border-top-color: rgba(7, 40, 50, 0.5);
+  /* Same as ul background */
+
+}
+/* Button Pop-up Menu */
+.vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 10em;
+  bottom: 1.5em;
+  /* Same bottom as vjs-menu border-top */
+
+  max-height: 15em;
+  overflow: auto;
+  left: -5em;
+  /* Width of menu - width of button / 2 */
+
+  /* background-color-with-alpha */
+  background-color: #07141e;
+  background-color: rgba(7, 20, 30, 0.7);
+  /* box-shadow */
+  -webkit-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+  box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+}
+.vjs-default-skin .vjs-menu-button:hover .vjs-menu {
+  display: block;
+}
+.vjs-default-skin .vjs-menu-button ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0.3em 0 0.3em 0;
+  line-height: 1.4em;
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: lowercase;
+}
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected {
+  background-color: #000;
+}
+.vjs-default-skin .vjs-menu-button ul li:focus,
+.vjs-default-skin .vjs-menu-button ul li:hover,
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected:focus,
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected:hover {
+  outline: 0;
+  color: #111;
+  /* background-color-with-alpha */
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.75);
+  /* box-shadow */
+  -webkit-box-shadow: 0 0 1em #ffffff;
+  -moz-box-shadow: 0 0 1em #ffffff;
+  box-shadow: 0 0 1em #ffffff;
+}
+.vjs-default-skin .vjs-menu-button ul li.vjs-menu-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0;
+  margin: 0 0 0.3em 0;
+  font-weight: bold;
+  cursor: default;
+}
+
+
+
+/* Cast button */
+.vjs-default-skin .vjs-cast-button {
+  float: right;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.vjs-default-skin .vjs-cast-button:before {
+  content: "\e00e";
+  z-index: 250;
+  width: 3em;
+  line-height: 2.45;
+}
+
+/* Subtitles Button */
+.vjs-default-skin .vjs-subtitles-button:before {
+  content: "\e00c";
+}
+/* Captions Button */
+.vjs-default-skin .vjs-captions-button:before {
+  content: "\e008";
+}
+/* Replacement for focus outline */
+.vjs-default-skin .vjs-captions-button:focus .vjs-control-content:before,
+.vjs-default-skin .vjs-captions-button:hover .vjs-control-content:before {
+  /* box-shadow */
+  -webkit-box-shadow: 0 0 1em #ffffff;
+  -moz-box-shadow: 0 0 1em #ffffff;
+  box-shadow: 0 0 1em #ffffff;
+}
+/*
+REQUIRED STYLES (be careful overriding)
+================================================================================
+When loading the player, the video tag is replaced with a DIV,
+that will hold the video tag or object tag for other playback methods.
+The div contains the video playback element (Flash or HTML5) and controls,
+and sets the width and height of the video.
+
+** If you want to add some kind of border/padding (e.g. a frame), or special
+positioning, use another containing element. Otherwise you risk messing up
+control positioning and full window mode. **
+*/
+.video-js {
+  background-color: #000;
+  position: relative;
+  padding: 0;
+  /* Start with 10px for base font size so other dimensions can be em based and
+     easily calculable. */
+
+  font-size: 10px;
+  /* Allow poster to be vertially aligned. */
+
+  vertical-align: middle;
+  /*  display: table-cell; */
+  /*This works in Safari but not Firefox.*/
+
+  /* Provide some basic defaults for fonts */
+
+  font-weight: normal;
+  font-style: normal;
+  /* Avoiding helvetica: issue #376 */
+
+  font-family: 'Open Sans',Helvetica Neue,Arial,sans-serif;
+  /* Turn off user selection (text highlighting) by default.
+     The majority of player components will not be text blocks.
+     Text areas will need to turn user selection back on. */
+
+  /* user-select */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Playback technology elements expand to the width/height of the containing div
+    <video> or <object> */
+.video-js .vjs-tech {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when
+   checking fullScreenEnabled. */
+.video-js:-moz-full-screen {
+  position: absolute;
+}
+/* Fullscreen Styles */
+body.vjs-full-window {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /* Fix for IE6 full-window. http://www.cssplay.co.uk/layouts/fixed.html */
+  overflow-y: auto;
+}
+.video-js.vjs-fullscreen {
+  position: fixed;
+  overflow: hidden;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  /* IE6 full-window (underscore hack) */
+  _position: absolute;
+}
+.video-js:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+}
+.video-js.vjs-fullscreen.vjs-user-inactive {
+  cursor: none;
+}
+/* Poster Styles */
+.vjs-poster {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+.vjs-poster img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  padding: 0;
+  width: 100%;
+}
+/* Hide the poster when native controls are used otherwise it covers them */
+.video-js.vjs-using-native-controls .vjs-poster {
+  display: none;
+}
+/* Text Track Styles */
+/* Overall track holder for both captions and subtitles */
+.video-js .vjs-text-track-display {
+  text-align: center;
+  position: absolute;
+  bottom: 4em;
+  /* Leave padding on left and right */
+  left: 1em;
+  right: 1em;
+}
+/* Individual tracks */
+.video-js .vjs-text-track {
+  display: none;
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 0.1em;
+  /* Transparent black background, or fallback to all black (oldIE) */
+  /* background-color-with-alpha */
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.video-js .vjs-subtitles {
+  color: #ffffff /* Subtitles are white */;
+}
+.video-js .vjs-captions {
+  color: #ffcc66 /* Captions are yellow */;
+}
+.vjs-tt-cue {
+  display: block;
+}
+/* Hide disabled or unsupported controls */
+.vjs-default-skin .vjs-hidden {
+  display: none;
+}
+.vjs-lock-showing {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+}
+/* -----------------------------------------------------------------------------
+The original source of this file lives at
+https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
+
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+
+.row:after {
+  clear: both;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+
+.row:after {
+  clear: both;
+}
+
+.ns-1,
+.ns-2,
+.ns-3,
+.ns-4,
+.ns-5,
+.ns-6,
+.ns-7,
+.ns-8,
+.ns-9,
+.ns-10,
+.ns-11,
+.ns-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+}
+
+.ns-12 {
+  width: 100%;
+}
+
+.ns-11 {
+  width: 91.66666666666666%;
+}
+
+.ns-10 {
+  width: 83.33333333333334%;
+}
+
+.ns-9 {
+  width: 75%;
+}
+
+.ns-8 {
+  width: 66.66666666666666%;
+}
+
+.ns-7 {
+  width: 58.333333333333336%;
+}
+
+.ns-6 {
+  width: 50%;
+}
+
+.ns-5 {
+  width: 41.66666666666667%;
+}
+
+.ns-4 {
+  width: 33.33333333333333%;
+}
+
+.ns-3 {
+  width: 25%;
+}
+
+.ns-2 {
+  width: 16.666666666666664%;
+}
+
+.ns-1 {
+  width: 8.333333333333332%;
+}
+
+.ns-offset-12 {
+  margin-left: 100%;
+}
+
+.ns-offset-11 {
+  margin-left: 91.66666666666666%;
+}
+
+.ns-offset-10 {
+  margin-left: 83.33333333333334%;
+}
+
+.ns-offset-9 {
+  margin-left: 75%;
+}
+
+.ns-offset-8 {
+  margin-left: 66.66666666666666%;
+}
+
+.ns-offset-7 {
+  margin-left: 58.333333333333336%;
+}
+
+.ns-offset-6 {
+  margin-left: 50%;
+}
+
+.ns-offset-5 {
+  margin-left: 41.66666666666667%;
+}
+
+.ns-offset-4 {
+  margin-left: 33.33333333333333%;
+}
+
+.ns-offset-3 {
+  margin-left: 25%;
+}
+
+.ns-offset-2 {
+  margin-left: 16.666666666666664%;
+}
+
+.ns-offset-1 {
+  margin-left: 8.333333333333332%;
+}
+
+.ns-offset-0 {
+  margin-left: 0;
+}
+
+
+
+.modal .container {
+width: auto;
+margin-right: auto;
+margin-left: auto;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+/* MODAL PART */
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: rgba(25, 25, 25, 0.95);
+  padding: 20px;
+  z-index: 950;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal header {
+  position: relative;
+}
+
+.modal-link {
+  margin: 10px 0px 20px 0px;
+  color: #FFF;
+}
+
+.modal-label {
+  margin: 0px 0px 20px 0px;
+  font-size: 0.8em;
+  color: #FFF;
+}
+
+.inner-label {
+  margin: 0px 0px 0px 0px;
+  font-size: 0.6em;
+  line-height: 1.6;
+  color: #FFF;
+}
+
+
+
+/* INPUT + FORMS + SELECT */
+input {
+  font-weight: 400;
+  color: #FFF;
+  font-size: 12px;
+  text-transform: none;
+  margin:0px 0px 14px 0px;
+  background: transparent;
+  padding: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 2px solid #fff;
+}
+
+.input-block {
+  display: block;
+  width: 100%;
+}
+
+input:-moz-placeholder {
+    color: #FFF;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: #FFF;
+    opacity: 1;
+}
+
+::-webkit-input-placeholder {
+    color: #FFF;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder {
+    color: #FFF;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+textarea:focus:-moz-placeholder { color:#404355; }
+
+.modal input[type=text] {
+  background: transparent;
+  border: 2px solid #FFF;
+  color:#FFF;
+  font-size: 12px;
+  font-weight: 400;
+}
+ 
+.modal input[type=text]:focus {
+  background: transparent;
+  border: 2px solid #FFF;
+  color:#FFF;
+}
+
+.modal textarea {
+  background: transparent;
+  border: 2px solid #FFF;
+  height: 74px;
+  color:#FFF;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+
+.modal-input {
+  margin: 5px 0px 10px 0px;
+}
+
+textarea {  
+  overflow:hidden;
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+  height: 200px;
+  display:block;
+  background: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  resize: none;
+  color: #404355;
+  font-weight: 200;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+.checkbox {
+display: inline-block;
+margin-top: 0;
+margin-bottom: 0;
+padding-left: 0;
+vertical-align: middle;
+}
+
+.lt  {
+  margin-top: 9px;
+}
+.no-label {
+  margin-top: 31px;
+}
+
+
+.select {
+  margin: 5px 0px 10px 0px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+
+.down-select {
+  position: relative;
+  margin: 0;
+  color: #FFF;
+  font-weight: 400;
+  font-size: 12px;
+  background: none; /* Fallback for IE 8 */
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  padding: 10px;
+}
+
+.down-select:focus {
+  z-index: 3;
+  width: 100%;
+  color: #FFF;
+  outline: 0;
+    border: 2px solid #FFF;
+}
+
+.down-select > option {
+  margin: 3px;
+  text-shadow: none;
+  background: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.radio, .checkbox {
+  display: block;
+  min-height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.radio label, .checkbox label {
+  display: inline;
+  font-weight: 400;
+  cursor: pointer;
+  float: left;
+}
+
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox] {
+  float: left;
+  margin-left: -15px;
+  margin-right: 10px;
+}
+
+input[type=radio], input[type=checkbox] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+select {
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+}
+
+/* Fix for IE 8 putting the arrows behind the select element. */
+.lt-ie9 .select {
+  z-index: 1;
+}
+
+.lt-ie9 .down-select {
+  z-index: -1;
+}
+
+.lt-ie9 .down-select:focus {
+  z-index: 3;
+}
+
+@-moz-document url-prefix() {
+  .down-select {
+    padding: 10px;
+
+  }
+}
+
+
+
+
+.btn {
+  border: none;
+  font-size: 12px;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  padding: 6px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  outline: none;
+  position: relative;
+  -webkit-transition: background .25s linear;
+  -moz-transition: background .25s linear;
+  transition: background .25s linear;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: background .25s linear;
+  -moz-transition: background .25s linear;
+  transition: background .25s linear;
+}
+
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.save{
+  margin-top: 10px;
+  background: #555555;
+  text-align: center;
+  font-size: 12px;
+  color: #FFF;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.save:hover{
+  background: #7d7d7d;
+  color: #FFF;
+  text-decoration: none;
+}
+
+@keyframes pulse {
+    0% { width: .7em; height: .7em; margin: .4em;  }
+    50% { width: 1.1em; height: 1.1em; margin: .2em; }
+    100% { width: .9em; height: .9em; margin: .3em; }
+}
