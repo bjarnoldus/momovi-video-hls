@@ -1,7 +1,8 @@
 # wecast.it video hls player
 
-The wecast.it video hls player is a free to use, open source HLS video player supporting:
-- all mayor browsers, including Safari, Chrome, FireFox, Internet Explorer;
+The wecast.it video hls player is a free to use, open source HLS video player.
+Supported platforms:
+- all major browsers, including Safari, Chrome, FireFox, Internet Explorer;
 - Tablets, including iPad and Android 4.2+
 - Smart phones, including iPhone, Android 4.2+ and Black Berry.
 
