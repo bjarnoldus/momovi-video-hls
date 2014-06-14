@@ -1,6 +1,29 @@
-/**
- * @fileoverview Main function src.
- */
+/*-------------------------------------------------------------------------------
+   Copyright (c) 2014 NoZAP B.V.
+   Copyright (c) 2013 Brightcove, Inc.
+
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.
+   
+   Authors:
+       Jeroen Arnoldus
+       Based on videojs 
+     
+--------------------------------------------------------------------------------*/
 
 // HTML5 Shiv. Must be in <head> to support older browsers.
 document.createElement('video');
@@ -2744,6 +2767,12 @@ vjs.Player = vjs.Component.extend({
       this.addClass('vjs-controls-disabled');
     }
 
+    if (this.cast()) {
+      this.addClass('vjs-cast-enabled');
+    } else {
+      this.addClass('vjs-cast-disabled');
+    }
+
     // TODO: Make this smarter. Toggle user state between touching/mousing
     // using events, since devices can have both touch and mouse events.
     // if (vjs.TOUCH_ENABLED) {
@@ -3837,6 +3866,8 @@ vjs.Player.prototype.poster = function(src){
  */
 vjs.Player.prototype.controls_;
 
+
+vjs.Player.prototype.cast_;
 /**
  * Get or set whether or not the controls are showing.
  * @param  {Boolean} controls Set controls to showing or not
@@ -3861,6 +3892,28 @@ vjs.Player.prototype.controls = function(bool){
     return this;
   }
   return this.controls_;
+};
+
+
+vjs.Player.prototype.cast = function(bool){
+  if (bool !== undefined) {
+    bool = !!bool; // force boolean
+    // Don't trigger a change event unless it actually changed
+    if (this.cast_ !== bool) {
+      this.cast_ = bool;
+      if (bool) {
+        this.removeClass('vjs-cast-disabled');
+        this.addClass('vjs-cast-enabled');
+        this.trigger('castenabled');
+      } else {
+        this.removeClass('vjs-cast-enabled');
+        this.addClass('vjs-cast-disabled');
+        this.trigger('castdisabled');
+      }
+    }
+    return this;
+  }
+  return this.cast_;
 };
 
 vjs.Player.prototype.usingNativeControls_;
@@ -5459,7 +5512,7 @@ vjs.Flash = vjs.MediaTechController.extend({
           // SWF Callback Functions
           // Player Settings
           'autoPlay': playerOptions.autoplay,
-          'plugin_hls': '/static/flash/HLSProviderOSMF.swf',
+          'plugin_hls': '/static/flash/wecast.it-HLS-provider.swf',
 		  'controlBarMode': 'none',
     	  'javascriptCallbackFunction': 'onJavaScriptBridgeCreated',
 //          'preload': playerOptions.preload,
