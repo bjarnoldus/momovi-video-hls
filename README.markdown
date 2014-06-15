@@ -1,4 +1,4 @@
-# wecast.it HTML5 HLS video player
+# wecast.it HTML5 HLS video player ([Download release](https://wecast.it/opensource/wecast.it-video-hls))
 
 The wecast.it video player ([demo](https://yourstory.wecast.it/promo)) is a free to use, open source HTML5 HLS video player.
 Supported platforms:
