@@ -21,7 +21,6 @@ Supported platforms:
     - Accurate seeking to exact requested position
     - Key frame based seeking (nearest key frame)
     - Segment based seeking (beginning of segment)
-  - AES-128 decryption 
   - Buffer progress report
   - Error resilience
     - Retry mechanism on I/O errors 
