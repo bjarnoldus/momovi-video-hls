@@ -7,7 +7,7 @@ run the build.sh in builds
 
 The result is an OSMF player for StrobeMediaPlayback
 
-#PATCHES By BJA  / NoZAP
+#PATCHES By momovi.com
 
 Now handles discontinuities in live streams automatically
 
@@ -120,7 +120,3 @@ The license summary and full text can be found here: [CC BY-NC-SA 3.0](http://cr
 **All other files (source code and executable) are governed by MPL 2.0** (Mozilla Public License 2.0).
 The license full text can be found here: [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
 
-###Donate
-If you'd like to support future development and new product features, please make a donation via PayPal - a secure online banking service.These donations are used to cover my ongoing expenses - web hosting, domain registrations, and software and hardware purchases.
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=463RB2ALVXJLA)

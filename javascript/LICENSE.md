@@ -1,5 +1,5 @@
-design - Copyright 2014 wecast.it groep B.V.
-hls flash integration - Copyright 2014 NoZAP B.V.
+design - Copyright 2014 momovi, momovi.com
+hls flash integration - Copyright 2014 momovi, momovi.com
 original videojs - Copyright 2013 Brightcove, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
