@@ -1,13 +1,13 @@
-# momovi.com HTML5 HLS video player
+#   HTML5 HLS video player
 
-The momovi.com video player ([demo](https://momovi.com/static/player/momovi.com-hls-video-player/player.html)) is a free to use, open source HTML5 HLS video player.
+The   video player  is a free to use, open source HTML5 HLS video player.
 Supported platforms:
 - all major browsers, including Safari, Chrome, FireFox, Internet Explorer;
 - Tablets, including iPad and Android 4.2+
 - Smart phones, including iPhone, Android 4.2+ and Black Berry.
 
 ## Usage
-  - Download the video player from [momovi.com video hls player](https://momovi.com/opensource/momovi-video-hls)
+  - Download the video player from 
   - Unzip, extract and upload the content to your server
   - Configure the HTML to your needs
 
@@ -44,17 +44,17 @@ Supported platforms:
 
 
 ## Contributing
-The momovi.com video player is a free and open source library, and we appreciate any help you're willing to give. Contact us for bugs, feature requests and other questions at opensource@momovi.com .
+The   video player is a free and open source library, and we appreciate any help you're willing to give. Contact us for bugs, feature requests and other questions at opensource@  .
 
 ## License
-The momovi.com video player is based on two open source projects, released under different licences
+The   video player is based on two open source projects, released under different licences
   
   - HTML5 video player:
-    - hls flash integration - Copyright 2014 momovi.com
+    - hls flash integration - Jeroen Arnoldus Copyright 2014  
     - original videojs - Copyright 2013 Brightcove, Inc.
 
   - HLS Flash player plugin:
-    - discontinuity tag - Copyright (c) 2014 momovi.com
+    - discontinuity tag - Jeroen Arnoldus Copyright (c) 2014  
     - original - Copyright (c) 2013 Guillaume du Pontavice (https://github.com/mangui/HLSprovider)
 
 
