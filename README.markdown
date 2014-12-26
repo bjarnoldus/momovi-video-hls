@@ -55,7 +55,7 @@ The   video player is based on two open source projects, released under differen
 
   - HLS Flash player plugin:
     - discontinuity tag - Jeroen Arnoldus Copyright (c) 2014  
-    - original - Copyright (c) 2013 Guillaume du Pontavice (https://github.com/mangui/HLSprovider)
+    - original - Copyright (c) 2013 Guillaume du Pontavice (https://github.com/mangui/flashls)
 
 
 
