@@ -54,8 +54,13 @@ The momovi.com video player is based on two open source projects, released under
     - original videojs - Copyright 2013 Brightcove, Inc.
 
   - HLS Flash player plugin:
+<<<<<<< HEAD
+    - discontinuity tag - Copyright 2014-2015 Momovi.com, The Netherlands 
+    - original - Copyright (c) 2013 Guillaume du Pontavice (https://github.com/mangui/HLSprovider)
+=======
     - discontinuity tag - Jeroen Arnoldus Copyright (c) 2014  
     - original - Copyright (c) 2013 Guillaume du Pontavice (https://github.com/mangui/flashls)
+>>>>>>> FETCH_HEAD
 
 
 
